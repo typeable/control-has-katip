@@ -1,0 +1,34 @@
+cabal-version:       2.4
+name:                control-has-katip
+version:             0.1.0.0
+synopsis:            Orphans and lenses that tie control-has and katip
+license-file:        LICENSE
+build-type:          Simple
+
+library
+  hs-source-dirs:      src
+  ghc-options:         -Wall
+  exposed-modules:     Control.Has.Katip
+  build-depends:       base
+                     , control-has
+                     , lens
+  if !impl(ghcjs)
+    build-depends:     katip
+  default-language:    Haskell2010
+  default-extensions:  ConstraintKinds
+                     , DataKinds
+                     , DefaultSignatures
+                     , DerivingStrategies
+                     , FlexibleContexts
+                     , FlexibleInstances
+                     , FunctionalDependencies
+                     , GADTs
+                     , GeneralizedNewtypeDeriving
+                     , KindSignatures
+                     , RankNTypes
+                     , StandaloneDeriving
+                     , TypeOperators
+                     , TypeFamilies
+                     , TemplateHaskell
+                     , UndecidableInstances
+                     , UndecidableSuperClasses
